@@ -1,22 +1,69 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Fantastic Chat App</title>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Importing icons from Fontawesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css"
+    />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/1.7.3/socket.io.js"></script>
     <link href="./style.css" rel="stylesheet" />
+    <title>Fantastic Chat App</title>
   </head>
   <body>
-    <ul id="messages"></ul>
-    <form id="form" action="">
-      <input
-        id="input"
-        autocomplete="off"
-        title="input"
-        placeholder="Chat Message"
-      /><button type="submit">Send</button>
-    </form>
+    <div id="main_container">
+      <header>Fantastic Chat App</header>
+      <div id="ul_container">
+        <ul id="messages">
+          <!-- This is where we display the chat messages -->
+        </ul>
+        <ul id="user_list">
+          <!-- This place is to display list of active users -->
+        </ul>
+      </div>
+      <div class="container">
+        <div class="options">
+          <button id="bold" class="option-button format">
+            <i class="fa-solid fa-bold"></i>
+          </button>
+          <button id="italic" class="option-button format">
+            <i class="fa-solid fa-italic"></i>
+          </button>
+          <button id="underline" class="option-button format">
+            <i class="fa-solid fa-underline"></i>
+          </button>
+          <button id="strikethrough" class="option-button format">
+            <i class="fa-solid fa-strikethrough"></i>
+          </button>
+          <div class="input-wrapper">
+            <input type="color" id="foreColor" class="adv-option-button" />
+            <label for="foreColor">Font Color</label>
+          </div>
+          <div class="input-wrapper">
+            <input type="color" id="backColor" class="adv-option-button" />
+            <label for="backColor">Background Color</label>
+          </div>
+        </div>
+
+        <div id="input" contenteditable="true">
+          <!-- This is where user type the text for chat -->
+
+          <!-- <form id="form" action="">
+          <input
+            id="input"
+            autocomplete="off"
+            title="input"
+            placeholder="Chat Message"
+          />
+          <button type="submit">Send</button>
+        </form> -->
+        </div>
+        <button id="btn" type="click">Send</button>
+      </div>
+    </div>
   </body>
   <script src="./script.js" type="module"></script>
 </html>
