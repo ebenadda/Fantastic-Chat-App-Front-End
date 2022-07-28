@@ -8,14 +8,12 @@
     <link href="./style.css" rel="stylesheet" />
   </head>
   <body>
-    <ul id="messages"></ul>
-    <form id="form" action="">
-      <input
-        id="input"
-        autocomplete="off"
-        title="input"
-        placeholder="Chat Message"
-      /><button type="submit">Send</button>
+    <h4 id="chat-title">Fantastic Chat App</h4>
+    <ul id="messages-container"></ul>
+    <form id="form" action="/" method="POST">
+      <input id="handle" type="text" placeholder="Message" />
+      <input id="message" type="text" placeholder="Handle" />
+      <button id="send" type="submit">Send</button>
     </form>
   </body>
   <script src="./script.js" type="module"></script>

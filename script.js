@@ -1,23 +1,35 @@
 import { io } from "https://cdn.socket.io/4.3.2/socket.io.esm.min.js";
+    const socket = io("http://localhost:3000/");    
+      const messages_container = document.getElementById("messages-container");
+      const form = document.getElementById("form");
+      const handle = document.getElementById("handle");
+      const message = document.getElementById('message');
 
-      var socket = io("http://localhost:3000/");
-      var messages = document.getElementById("messages");
-      var form = document.getElementById("form");
-      var input = document.getElementById("input");
 
       form.addEventListener("submit", function (e) {
-        e.preventDefault();
-        if (input.value) {
-          socket.emit("chat message", input.value);
-          input.value = "";
+         e.preventDefault();
+        if (handle.value && message.value) {
+          socket.emit("chat message", {
+            text: message.value,
+            sender: handle.value,
+          });
+        // handle.value = "";
         }
       });
 
-      socket.on("chat message", function (msg) {
-        var item = document.createElement("li");
-        item.textContent = msg;
-        messages.appendChild(item);
+      socket.on("chat message", function (msgObj) {
+        const item = document.createElement("li");
+        //Sender: text
+        const text = msgObj.text
+        const sender= msgObj.sender
+        item.textContent = `${text}: ${sender}`;
+        messages_container.appendChild(item);
         window.scrollTo(0, document.body.scrollHeight);
       });
+
+//Help username persist
+// localStorage.setItem('username', "Kita");
+// localStorage.getItem('username');
+
 
     

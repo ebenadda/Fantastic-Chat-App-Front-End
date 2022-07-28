@@ -48,3 +48,7 @@ body {
 #messages > li:nth-child(odd) {
   background: #efefef;
 }
+
+li {
+  text-decoration: none;
+}
