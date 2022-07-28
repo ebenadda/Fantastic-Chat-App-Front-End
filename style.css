@@ -59,3 +59,8 @@ body {
 li {
   list-style: none;
 }
+
+
+.col-md-9 {
+  	overflow-y: scroll;
+}
