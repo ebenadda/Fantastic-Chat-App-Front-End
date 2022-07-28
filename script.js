@@ -27,9 +27,5 @@ import { io } from "https://cdn.socket.io/4.3.2/socket.io.esm.min.js";
         window.scrollTo(0, document.body.scrollHeight);
       });
 
-//Help username persist
-// localStorage.setItem('username', "Kita");
-// localStorage.getItem('username');
-
 
     
