@@ -1,5 +1,54 @@
 * {
   box-sizing: border-box;
+
+}
+ 
+body {
+  /* padding-bottom: 3rem; */
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Helvetica, Arial, sans-serif;
+}
+
+#main-container {
+border: 1px solid black;
+border-radius: 10px;
+height: 600px;
+width: 600px;
+margin: auto;
+background-color: black; 
+ background-image: url("https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/c3c9a72e-75c9-47af-bd6c-f7ae38cf88c1/d840vh-e0c852d0-1fc8-4090-802e-334a54f18e99.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcL2MzYzlhNzJlLTc1YzktNDdhZi1iZDZjLWY3YWUzOGNmODhjMVwvZDg0MHZoLWUwYzg1MmQwLTFmYzgtNDA5MC04MDJlLTMzNGE1NGYxOGU5OS5qcGcifV1dLCJhdWQiOlsidXJuOnNlcnZpY2U6ZmlsZS5kb3dubG9hZCJdfQ.5SXOCFQ16MfmLFDTgrJS_0hCm-7l2YNbMEqbx-NAxMo");
+
+}
+
+#chat-title {
+  height: 50px;
+  width: 600px;
+  color: white;
+  margin: auto;
+  padding-top: 10px;
+}
+
+#main-chat {
+  height: 490px;
+  /* change width to 400 in full screen */
+  width: 400px;
+ margin: 0px 15px;
+ background-color: #F5F5F5;
+ border-radius: 10px;
+ opacity: 90%;
+}
+
+#online-users {
+  height: 490px;
+  width: 150px;
+  margin-left: 5px;
+  background-color: #F5F5F5;
+  border-radius: 10px;
+  opacity: 90%;
+}
+
+#form-ctr {
+
 }
 
 body {
@@ -40,17 +89,61 @@ body {
 
 #form-ctr {
   border: 1px solid black;
+
   height: 40px;
   width: 600px;
   padding-top: 4px;
   display: flex;
   flex-grow: 1;
+
+  margin-top: 10px;
+  border-radius: 10px;
 }
 
 #handle {
   width: 403px;
+
+  border-radius: 10px;
+  opacity: 90%;
+
+
 }
 
 #message {
   width: 106px;
+
+  border-radius: 10px;
+  opacity: 90%;
 }
+<<<<<<< HEAD
+=======
+
+li {
+  list-style: none;
+}
+
+#online-users-txt {
+  font-family: 'Times New Roman', Times, serif ;
+  font-weight: bolder;
+  margin: auto;
+  text-decoration: underline;
+}
+
+#send {
+  border-radius: 10px;
+  opacity: 90%;
+}
+
+
+}
+
+li {
+  list-style: none;
+}
+
+
+.col-md-9 {
+  	overflow-y: scroll;
+}
+
+>>>>>>> main
