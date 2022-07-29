@@ -14,7 +14,6 @@ body {
   height: 600px;
   width: 600px;
   margin: auto;
-  /* background-color: black; */
 }
 
 #chat-title {
@@ -54,8 +53,4 @@ body {
 
 #message {
   width: 106px;
-}
-
-li {
-  list-style: none;
 }
