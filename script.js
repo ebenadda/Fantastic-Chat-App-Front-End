@@ -4,6 +4,7 @@ const socket = io("https://fantastic-chat-app.herokuapp.com/");
 const messages_container = document.getElementById("messages-container");
 const form = document.getElementById("form");
 const onlineUsers = document.getElementById("online-user-container");
+const chatMessages = document.querySelector(".col-md-9");
 
 const { username } = Qs.parse(location.search, { ignoreQueryPrefix: true });
 
@@ -21,6 +22,9 @@ socket.on("users", (users) => {
 //Messages from server
 socket.on("message", (message) => {
   outputMessage(message);
+
+  //Scroll down
+  chatMessages.scrollTop = chatMessages.scrollHeight;
 });
 
 //Listen to message after clicking send
