@@ -8,6 +8,10 @@ let textInput = document.getElementById("input");
 var socket = io("http://localhost:3000/");
 var messages = document.getElementById("messages");
 //var form = document.getElementById("form");
+
+//neten's codes
+var newBtn = document.getElementById("listen");
+var inputValue = document.getElementById("user_input");
 var input = document.getElementById("input");
 var sendBtn = document.getElementById("btn");
 
@@ -47,3 +51,33 @@ socket.on("chat message", function (msg) {
   messages.appendChild(item);
   window.scrollTo(0, document.body.scrollHeight);
 });
+newBtn.addEventListener("submit", getGif);
+function getGif(evt) {
+  evt.preventDefault();
+  const TENOR_KEY = "AIzaSyBfBf9u8QN24VSoz3g5CIkLb8a4FOCYP-o";
+  const URL = `https://tenor.googleapis.com/v2/search?key=${TENOR_KEY}&q=${inputValue.value}`;
+
+  fetch(URL)
+    .then((response) => response.json())
+    .then((data) => createGifCards(data.results));
+}
+
+function createGifCards(gifs) {
+  removeAllChildren("#gifs_container");
+  for (let index = 0; index < 4; index++) {
+    const gif = gifs[index];
+    const gifUrl = gif.media_formats.tinygif.url;
+    const newImage = document.createElement("img");
+
+    newImage.setAttribute("src", gifUrl);
+    newImage.setAttribute("onclick", (input.textContent = gifUrl));
+    document.querySelector("#gifs_container").appendChild(newImage);
+  }
+}
+
+function removeAllChildren(parentEltSelector) {
+  const parent = document.querySelector(parentEltSelector);
+  while (parent.lastChild !== null) {
+    parent.lastChild.remove();
+  }
+}
