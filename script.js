@@ -3,28 +3,39 @@ import { io } from "https://cdn.socket.io/4.3.2/socket.io.esm.min.js";
 const socket = io("http://localhost:3000/");
 const messages_container = document.getElementById("messages-container");
 const form = document.getElementById("form");
-const handle = document.getElementById("handle");
-const message = document.getElementById("message");
+const onlineUsers = document.getElementById("online-user-container");
 
+const { username } = Qs.parse(location.search, { ignoreQueryPrefix: true });
+
+//Transmit as new user get connected
+socket.emit("newUser", username);
+
+//Getting online user list
+socket.on("users", (users) => {
+  onlineUsers.innerHTML = " ";
+  users.forEach((user) => {
+    onlineUsers.innerHTML += `<li>${user.username}</li>`;
+  });
+});
+
+//Messages from server
 socket.on("message", (message) => {
   outputMessage(message);
 });
 
+//Listen to message after clicking send
 form.addEventListener("submit", function (e) {
   e.preventDefault();
-  if (handle.value && message.value) {
-    const msg = e.target.elements.handle.value;
-    const sender = e.target.elements.message.value;
 
-    socket.emit("fromUser", {
-      text: msg,
-      sender: sender,
-    });
-    e.target.elements.handle.value = " ";
-    e.target.elements.handle.focus();
-  }
+  const msg = e.target.elements.handle.value;
+  //Message to server
+  socket.emit("fromUser", msg);
+  e.target.elements.handle.value = " ";
+  //Leave cursor on message box
+  e.target.elements.handle.focus();
 });
 
+//Function to append the message to display
 function outputMessage(message) {
   const div = document.createElement("div");
   div.classList.add("newMessage");
