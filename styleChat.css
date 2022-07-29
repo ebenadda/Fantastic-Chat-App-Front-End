@@ -24,6 +24,7 @@ body {
   color: white;
   margin: auto;
   padding-top: 10px;
+  text-align: center;
 }
 
 #main-chat {
@@ -34,6 +35,22 @@ body {
   background-color: #f5f5f5;
   border-radius: 10px;
   opacity: 90%;
+}
+
+p.meta {
+  font-size: 15px;
+  font-weight: bold;
+  color: #7d3a4c;
+  opacity: 0.7;
+  margin-bottom: 7px;
+}
+
+p.meta span {
+  color: rgb(77, 76, 76);
+}
+
+p.text {
+  color: black;
 }
 
 #online-users {
@@ -57,13 +74,7 @@ body {
 }
 
 #handle {
-  width: 403px;
-  border-radius: 10px;
-  opacity: 90%;
-}
-
-#message {
-  width: 106px;
+  width: 510px;
   border-radius: 10px;
   opacity: 90%;
 }

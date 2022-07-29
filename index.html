@@ -1,46 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./styleJoin.css" />
     <title>Fantastic Chat App</title>
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-      integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx"
-      crossorigin="anonymous"
-    />
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/1.7.3/socket.io.js"></script>
-    <link href="./style.css" rel="stylesheet" />
   </head>
-
   <body>
-    <div id="main-container" class="text-center">
-      <h4 id="chat-title">Fantastic Chat App</h4>
-      <div class="container">
-        <div class="row">
-          <div id="main-chat" class="col-md-9">
-            <div id="messages-container">
-              <!-- This is where chat message will go -->
-            </div>
-          </div>
-          <div id="online-users" class="col-sm-3">
-            <ul id="online-user-container">
-              <li id="online-users-txt">Online Users</li>
-            </ul>
-          </div>
-        </div>
-        <div class="row">
-          <div id="form-ctr" class="col-sm-12">
-            <form id="form" action="/" method="POST">
-              <input id="handle" type="text" placeholder="Message" />
-              <input id="message" type="text" placeholder="Username" />
-              <button id="send" type="submit">Send</button>
-            </form>
-          </div>
-        </div>
+    <div id="main-intro-ctr">
+      <div id="header-ctr">
+        <header>Fantastic Chat App</header>
+      </div>
+      <div id="input-ctr">
+        <form action="mainPage.html">
+            <input type="text" name="username" id="username" placeholder="Enter username" required></input>
+            <button type="submit" id="btn">Join Chat</button>
+        </form>
       </div>
     </div>
   </body>
-  <script src="./script.js" type="module"></script>
 </html>
+
+
